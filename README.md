@@ -6,7 +6,8 @@ Steam 版（英語版）の **Drakensang: The Dark Eye** を日本語で遊べ�
 - 紹介ページ: https://higesho.github.io/drakensang-jp/
 - ダウンロード: [Releases（最新版）](https://github.com/higesho/drakensang-jp/releases/latest)
 
-![冒頭のアルドの手紙](docs/img/letter.jpg)
+![タイトル画面](docs/img/ss_title.jpg)
+![キャラクター作成画面](docs/img/ss_chargen.jpg)
 
 ## 対象
 

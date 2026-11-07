@@ -7,7 +7,7 @@
 <meta name="description" content="Drakensang: The Dark Eye（Steam 英語版）を日本語で遊べるようにする非公式パッチ。会話・日誌・UI に加え、メニュー・地図・看板の画像も日本語化。">
 <meta property="og:title" content="Drakensang 日本語化パッチ">
 <meta property="og:description" content="Drakensang: The Dark Eye（Steam 英語版）用の非公式日本語化パッチ。">
-<meta property="og:image" content="img/letter.jpg">
+<meta property="og:image" content="https://higesho.github.io/drakensang-jp/img/ss_title.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@ header.hero {
   background:
     linear-gradient(90deg, var(--bg) 0%, rgba(23,19,15,.92) 40%, rgba(23,19,15,.35) 75%, rgba(23,19,15,.2) 100%),
     linear-gradient(180deg, rgba(23,19,15,0) 60%, var(--bg) 100%),
-    url("img/letter.jpg") right center / auto 130% no-repeat,
+    url("img/ss_title.jpg") right center / auto 115% no-repeat,
     var(--bg);
   padding: 88px 0 64px;
   border-bottom: 1px solid var(--line);
@@ -103,7 +103,7 @@ h3 { font-size: 17px; margin: 24px 0 8px; }
 .gallery figcaption { padding: 8px 14px; font-size: 14px; color: var(--muted); }
 .gallery .row { display: grid; grid-template-columns: 1fr; gap: 16px; }
 @media (min-width: 720px) {
-  .gallery .row { grid-template-columns: 2fr 1fr 1fr; align-items: start; }
+  .gallery .row { grid-template-columns: 2fr 1fr; align-items: start; }
 }
 .gallery .small img { max-height: 420px; width: 100%; object-fit: contain; background: #18140f; }
 
@@ -157,6 +157,20 @@ footer {
 
 <main class="wrap">
 
+<section id="screens">
+  <h2>ゲーム画面</h2>
+  <div class="gallery">
+    <figure>
+      <img src="img/ss_title.jpg" alt="日本語化したタイトル画面。続きから、新規ゲーム、ゲームをロード、オプション、クレジット、終了" width="1280" height="720">
+      <figcaption>タイトル画面</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ss_chargen.jpg" alt="日本語化したキャラクター作成画面。種族・文化・職業、能力値、背景の説明が日本語で表示されている" width="1280" height="720" loading="lazy">
+      <figcaption>キャラクター作成画面</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section id="features">
   <h2>日本語化される内容</h2>
   <ul class="features">
@@ -168,20 +182,16 @@ footer {
 </section>
 
 <section id="gallery">
-  <h2>画像の例</h2>
+  <h2>日本語化した画像の例</h2>
   <div class="gallery">
     <figure>
-      <img src="img/letter.jpg" alt="冒頭のアルドの手紙。行書体の日本語で書き直したもの" width="1024" height="512" loading="lazy">
+      <img src="img/ss_letter.jpg" alt="冒頭のアルドの手紙。行書体の日本語で書き直したもの" width="1280" height="720" loading="lazy">
       <figcaption>冒頭に届くアルドの手紙</figcaption>
     </figure>
     <div class="row">
       <figure>
         <img src="img/map_avestrue.jpg" alt="アヴェストルー周辺の地図。地名が日本語になっている" width="900" height="900" loading="lazy">
         <figcaption>地図（アヴェストルー周辺）</figcaption>
-      </figure>
-      <figure class="small">
-        <img src="img/menu.jpg" alt="メインメニューの項目画像。続きから、新規ゲームなど" width="340" height="512" loading="lazy">
-        <figcaption>メインメニュー</figcaption>
       </figure>
       <figure class="small">
         <img src="img/sign_bear.jpg" alt="熊の首に懸けられた賞金の手配書" width="360" height="420" loading="lazy">
