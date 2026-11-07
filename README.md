@@ -33,7 +33,6 @@ Steam 版 Drakensang: The Dark Eye（英語版、バージョン 1.03）
 - キャラクター名は英字で入力してください。日本語入力（IME）がオンのまま名前欄に文字を打つと、ゲームがエラーで止まります。
 - 環境によっては、フルスクリーン起動直後に `GetBackBuffer() on device failed` で止まることがあります（日本語化とは無関係）。
   起動オプションに `-windowed -w 1600 -h 900` を入れるとウィンドウモードで起動できます。
-- 翻訳は AI（Claude）による機械翻訳です。誤訳や不自然な表現を見つけたら [Issues](https://github.com/higesho/drakensang-jp/issues) で教えてください。
 
 ## フォントと謝辞
 
