@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drakensang 日本語化パッチ</title>
+<meta name="description" content="Drakensang: The Dark Eye（Steam 英語版）を日本語で遊べるようにする非公式パッチ。会話・日誌・UI に加え、メニュー・地図・看板の画像も日本語化。">
+<meta property="og:title" content="Drakensang 日本語化パッチ">
+<meta property="og:description" content="Drakensang: The Dark Eye（Steam 英語版）用の非公式日本語化パッチ。">
+<meta property="og:image" content="img/letter.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #17130f;
+  --panel: #221c16;
+  --line: #3a3026;
+  --text: #e9e1d4;
+  --muted: #b3a690;
+  --gold: #e3a54a;
+  --gold-strong: #f0b85c;
+  --on-gold: #1b1309;
+  --code-bg: #120f0b;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans JP", "Yu Gothic UI", "Meiryo", sans-serif;
+  line-height: 1.85;
+  font-size: 16px;
+}
+a { color: var(--gold-strong); }
+img { max-width: 100%; height: auto; display: block; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+header.hero {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(23,19,15,.35) 0%, rgba(23,19,15,.9) 78%, var(--bg) 100%),
+    url("img/letter.jpg") center 30% / cover no-repeat;
+  padding: 88px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+.hero h1 {
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(30px, 6vw, 48px);
+  line-height: 1.3;
+  margin: 0 0 8px;
+  letter-spacing: .04em;
+  text-shadow: 0 2px 12px rgba(0,0,0,.8);
+}
+.hero h1 small {
+  display: block;
+  font-size: .42em;
+  color: var(--muted);
+  letter-spacing: .08em;
+  font-weight: 600;
+}
+.hero p.lead {
+  max-width: 34em;
+  margin: 16px 0 28px;
+  text-shadow: 0 1px 8px rgba(0,0,0,.9);
+}
+.btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+}
+.btn.primary { background: var(--gold); color: var(--on-gold); }
+.btn.primary:hover { background: var(--gold-strong); }
+.btn.ghost { color: var(--gold-strong); background: rgba(0,0,0,.35); }
+.btn.ghost:hover { background: rgba(227,165,74,.12); }
+.meta { color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+section { padding: 48px 0 8px; }
+h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  color: var(--gold-strong);
+  letter-spacing: .05em;
+}
+h3 { font-size: 17px; margin: 24px 0 8px; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding: 0; list-style: none; margin: 0; }
+.features li { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+.features b { display: block; color: var(--gold-strong); margin-bottom: 2px; }
+
+.gallery { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.gallery figure { margin: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.gallery figcaption { padding: 8px 14px; font-size: 14px; color: var(--muted); }
+.gallery .row { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) {
+  .gallery .row { grid-template-columns: 2fr 1fr 1fr; align-items: start; }
+}
+.gallery .small img { max-height: 420px; width: 100%; object-fit: contain; background: #18140f; }
+
+ol.steps { padding-left: 1.4em; }
+ol.steps li { margin-bottom: 10px; }
+code, pre {
+  font-family: Consolas, "Cascadia Mono", monospace;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+code { padding: 1px 6px; font-size: .92em; word-break: break-all; }
+pre { padding: 12px 14px; overflow-x: auto; font-size: 14px; line-height: 1.6; }
+.note {
+  background: var(--panel);
+  border-left: 3px solid var(--gold);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+}
+.tree { white-space: pre; }
+ul.plain { padding-left: 1.2em; }
+ul.plain li { margin-bottom: 6px; }
+
+footer {
+  margin-top: 56px;
+  border-top: 1px solid var(--line);
+  padding: 24px 0 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1><small>Drakensang: The Dark Eye</small>日本語化パッチ</h1>
+    <p class="lead">
+      Steam 版（英語版）の Drakensang を日本語で遊べるようにする、非公式のパッチです。
+      会話・クエスト日誌・アイテムやスキルの説明・UI の文章をすべて訳し、
+      メインメニュー、冒頭の手紙、地図、看板や碑文の画像も日本語に描き直しています。
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/higesho/drakensang-jp/releases/latest">ダウンロード（最新版）</a>
+      <a class="btn ghost" href="#install">導入方法</a>
+    </div>
+    <p class="meta">zip 約 37MB ／ 導入はフォルダを上書きコピーするだけ（インストーラーやバッチファイルはありません）</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="features">
+  <h2>日本語化される内容</h2>
+  <ul class="features">
+    <li><b>テキスト 約2万7千行</b>会話、クエスト日誌、アイテム・タレント・呪文の説明、メニューや設定画面の文章</li>
+    <li><b>用語と口調の統一</b>用語集と文体ガイド、仲間や主要人物ごとの口調を決めてから訳しています</li>
+    <li><b>画像 99枚</b>メインメニュー・ゲーム内メニュー、冒頭の手紙、地図 87枚、看板・手配書・黒板・神殿の碑文</li>
+    <li><b>日本語フォント</b>Noto Sans JP を同梱。日本語は文節ごとに折り返されます</li>
+  </ul>
+</section>
+
+<section id="gallery">
+  <h2>画像の例</h2>
+  <div class="gallery">
+    <figure>
+      <img src="img/letter.jpg" alt="冒頭のアルドの手紙。行書体の日本語で書き直したもの" width="1024" height="512" loading="lazy">
+      <figcaption>冒頭に届くアルドの手紙</figcaption>
+    </figure>
+    <div class="row">
+      <figure>
+        <img src="img/map_avestrue.jpg" alt="アヴェストルー周辺の地図。地名が日本語になっている" width="900" height="900" loading="lazy">
+        <figcaption>地図（アヴェストルー周辺）</figcaption>
+      </figure>
+      <figure class="small">
+        <img src="img/menu.jpg" alt="メインメニューの項目画像。続きから、新規ゲームなど" width="340" height="512" loading="lazy">
+        <figcaption>メインメニュー</figcaption>
+      </figure>
+      <figure class="small">
+        <img src="img/sign_bear.jpg" alt="熊の首に懸けられた賞金の手配書" width="360" height="420" loading="lazy">
+        <figcaption>手配書</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="target">
+  <h2>対象</h2>
+  <p>Steam 版 <b>Drakensang: The Dark Eye</b>（英語版、バージョン 1.03）。他の版でも動く可能性はありますが、確認していません。</p>
+</section>
+
+<section id="install">
+  <h2>導入方法</h2>
+  <ol class="steps">
+    <li><a href="https://github.com/higesho/drakensang-jp/releases/latest">リリースページ</a>から <code>Drakensang_JP_Patch_v○○.zip</code> をダウンロードし、展開します。</li>
+    <li>ゲームを終了しておきます。</li>
+    <li>ゲームのフォルダ（<code>drakensang.exe</code> があるフォルダ）を開きます。<br>
+      Steam のライブラリで Drakensang を右クリック →「管理」→「ローカルファイルを閲覧」</li>
+    <li>展開したフォルダの中にある <code>export</code> フォルダを、ゲームのフォルダにコピーします。<br>
+      「ファイルを置き換える」か聞かれたら「置き換える」を選びます。</li>
+  </ol>
+  <p>zip の中身はこうなっています。</p>
+<pre class="tree">Drakensang_JP_Patch_v1.0\
+  README.txt                    説明書
+  OFL.txt                       フォントのライセンス
+  export\
+    db\locale.db4               日本語のテキスト（上書き）
+    data\fonts\Drakensang       日本語フォント（上書き）
+    textures\local\*.dds        メニュー・手紙・看板・碑文の画像（追加）
+    textures\map\*.dds          地図の画像（追加）</pre>
+  <div class="note">
+    上書きされるのは <code>export\db\locale.db4</code> と <code>export\data\fonts\Drakensang</code> の2つだけで、残りは新しく追加されるファイルです。
+    元に戻したくなったときのために、上書き前にこの2つを別の場所にコピーしておくと安心です。
+  </div>
+  <p>Steam の「ゲームファイルの整合性を確認」を行うと、テキストとフォントが英語版に戻ります。その場合は、もう一度 <code>export</code> フォルダをコピーしてください。</p>
+</section>
+
+<section id="uninstall">
+  <h2>元に戻す</h2>
+  <ol class="steps">
+    <li>ゲームのフォルダの <code>export\textures</code> フォルダを削除します（日本語の画像はすべてここにあります）。</li>
+    <li>Steam のライブラリで Drakensang を右クリック →「プロパティ」→「インストール済みファイル」→「ゲームファイルの整合性を確認」を実行します。テキストとフォントが英語版に戻ります。<br>
+      上書き前にコピーしておいた2つのファイルを戻しても構いません。</li>
+  </ol>
+</section>
+
+<section id="notes">
+  <h2>注意点</h2>
+  <ul class="plain">
+    <li><b>キャラクター名は英字で入力してください。</b>名前の入力欄は日本語に対応していないため、日本語入力（IME）がオンのまま文字を打つとゲームがエラーで止まります。自動生成される名前や、会話中に出る主人公の名前も英字のままです。</li>
+    <li>環境によっては、フルスクリーンで起動した直後に <code>GetBackBuffer() on device failed</code> というエラーで止まることがあります。日本語化とは関係なく起きる現象です。その場合は Steam のプロパティ →「起動オプション」に <code>-windowed -w 1600 -h 900</code> と入れると、ウィンドウモードで起動できます。</li>
+    <li>ゲームは半角スペースの位置でしか改行できないため、日本語は文節ごとに半角スペースを入れて折り返しています。文中の小さな隙間はそのためです。</li>
+  </ul>
+</section>
+
+<section id="translation">
+  <h2>翻訳について</h2>
+  <ul class="plain">
+    <li>翻訳は AI（Claude）による機械翻訳です。用語集・文体ガイド・キャラクターごとの口調の設定を作ったうえで訳していますが、誤訳や不自然な表現、口調の揺れが残っています。</li>
+    <li>人名・神名などドイツ語由来の名前はドイツ語読みのカタカナ、英語版で英単語になっている名前は英語読みのカタカナ、意味のある地名や施設名は日本語訳にしています。</li>
+    <li>地図や看板の画像は、元の英文を消して日本語を描き直したものです。文字が絵（川・道・建物）と重なる箇所では、消した跡がぼやけて見えることがあります。</li>
+    <li>誤訳や表示の不具合を見つけたら、<a href="https://github.com/higesho/drakensang-jp/issues">Issues</a> で教えてください。</li>
+  </ul>
+</section>
+
+<section id="credits">
+  <h2>フォントと謝辞</h2>
+  <ul class="plain">
+    <li>日本語フォントは <a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP">Noto Sans JP</a>（© 2014-2021 Adobe, SIL Open Font License 1.1）を、ゲームが読み込める名前（DrakenFont）に変え、太さを固定したものです。改変版として OFL 1.1 に従って同梱しています（zip 内の <code>OFL.txt</code>）。</li>
+    <li>画像の日本語は、Windows 付属の游明朝・HG行書体で描いています。</li>
+    <li><code>locale.db4</code> とフォントの差し替えで日本語化できることは、<a href="http://drakensang.gamedb.info/wiki/">Drakensang:The Dark Eye 情報まとめ wiki</a> の「日本語化/日本語表示について」を参考にしました。</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    このパッチは非公式のファン製作物です。使用は自己責任でお願いします。ゲームデータの破損などについて責任は負いません。<br>
+    Drakensang: The Dark Eye およびゲーム内の文章・画像の著作権は、各権利者に帰属します。
+  </div>
+</footer>
+
+</body>
+</html>
